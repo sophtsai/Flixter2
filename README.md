@@ -22,8 +22,8 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] **Show rating on main page**
-- [ ] **Customize theme (background, font, colors)**
+- [X] **Show rating on main page**
+- [X] **Customize theme (background, font, colors)**
 
 ## Video Walkthrough
 
