@@ -1,8 +1,8 @@
-# Android Project 3 - *Flixter*
+# Android Project 4 - *Flixter 2*
 
 Submitted by: **Sophie Tsai**
 
-**Flixter** is a movie browsing app that allows users to browse movies currently playing in theaters.
+**Flixter 2** is a movie browsing app that allows users to browse top rated movies according to https://www.themoviedb.org/
 
 Time spent: **5** hours spent in total
 
@@ -10,26 +10,42 @@ Time spent: **5** hours spent in total
 
 The following **required** functionality is completed:
 
-- [X] **Make a request to [The Movie Database API's `now_playing`](https://developers.themoviedb.org/3/movies/get-now-playing) endpoint to get a list of current movies**
-- [X] **Parse through JSON data and implement a RecyclerView to display all movies**
-- [X] **Use Glide to load and display movie poster images**
+- [X] **Choose any endpoint on The MovieDB API except `now_playing`**
+  - Chosen Endpoint: `top_rated`
+- [] **Make a request to your chosen endpoint and implement a RecyclerView to display all entries**
+- [ ] **Use Glide to load and display at least one image per entry**
+- [ ] **Click on an entry to view specific details about that entry using Intents**
+
+The following **optional** features are implemented:
+
+- [ ] **Add another API call and RecyclerView that lets the user interact with different data.** 
+- [ ] **Add rounded corners to the images using the Glide transformations**
+- [ ] **Implement a shared element transition when user clicks into the details of a movie**
+
+The following **additional** features are implemented:
+
+- [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with [LiceCap](http://www.cockos.com/licecap/).  
+GIF created with ...  
+<!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
+## Notes
+
+Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [2022] [Sophie Tsai]
+    Copyright [yyyy] [name of copyright owner]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
