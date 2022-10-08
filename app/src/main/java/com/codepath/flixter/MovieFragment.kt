@@ -1,5 +1,6 @@
 package com.codepath.flixter
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,9 +19,7 @@ import com.google.gson.reflect.TypeToken
 import okhttp3.Headers
 import org.json.JSONObject
 
-// --------------------------------//
-// CHANGE THIS TO BE YOUR API KEY  //
-// --------------------------------//
+const val MOVIE_EXTRA = "MOVIE_EXTRA"
 private const val API_KEY = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
 
 /*
@@ -40,6 +39,7 @@ class MovieFragment : Fragment(), OnListFragmentInteractionListener {
         val progressBar = view.findViewById<View>(R.id.progress) as ContentLoadingProgressBar
         val recyclerView = view.findViewById<View>(R.id.list) as RecyclerView
         val context = view.context
+        recyclerView.layoutManager = GridLayoutManager(context, 2)
         updateAdapter(progressBar, recyclerView)
         return view
     }
@@ -54,10 +54,9 @@ class MovieFragment : Fragment(), OnListFragmentInteractionListener {
 
         // Using the client, perform the HTTP request
         client[
-                "https://api.themoviedb.org/3/movie/now_playing",
+                "https://api.themoviedb.org/3/movie/top_rated",
                 params,
                 object : JsonHttpResponseHandler()
-
 
                 {
                     /*
@@ -110,11 +109,12 @@ class MovieFragment : Fragment(), OnListFragmentInteractionListener {
 
     }
 
-    /*
-     * What happens when a particular book is clicked.
-     */
+
     override fun onItemClick(item: Movie) {
-        Toast.makeText(context, "test: " + item.title, Toast.LENGTH_LONG).show()
+
+        val intent = Intent(context, DetailActivity::class.java)
+        intent.putExtra(MOVIE_EXTRA, item)
+        context?.startActivity(intent)
     }
 
 }

@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.codepath.flixter.R.id
 
 class MoviesRecyclerViewAdapter (
@@ -25,13 +26,8 @@ class MoviesRecyclerViewAdapter (
     inner class MovieViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         var mItem: Movie? = null
         val mMovieTitle: TextView = mView.findViewById<View>(id.movie_title) as TextView
-        val mMovieRelease: TextView = mView.findViewById<View>(id.movie_release) as TextView
         val mMovieImage: ImageView = mView.findViewById<View>(id.movie_image) as ImageView
-        val mMovieDescription: TextView = mView.findViewById<View>(id.movie_description) as TextView
-
-        override fun toString(): String {
-            return mMovieTitle.toString() + " '" + mMovieRelease.text + "'"
-        }
+        val mMovieRating: TextView = mView.findViewById<View>(id.movie_rating) as TextView
     }
 
     /**
@@ -43,12 +39,12 @@ class MoviesRecyclerViewAdapter (
 
         holder.mItem = movie
         holder.mMovieTitle.text = movie.title
-        holder.mMovieRelease.text = movie.release
-        holder.mMovieDescription.text = movie.overview
+        holder.mMovieRating.text = movie.rating
 
         Glide.with(holder.mView)
             .load(base.plus(movie.posterImageUrl))
             .centerInside()
+            .transform(RoundedCorners(10))
             .into(holder.mMovieImage)
 
         holder.mView.setOnClickListener {
